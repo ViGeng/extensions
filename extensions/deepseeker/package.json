@@ -643,6 +643,78 @@
       ]
     },
     {
+      "name": "roleplay_on",
+      "title": "Roleplay on Selected",
+      "description": "Roleplay with LLM on selected text",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "system_prompt",
+          "placeholder": "Prompt for the system",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "user_prompt",
+          "placeholder": "Enter your question",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "preferences": [
+        {
+          "name": "prompt_roleplay_on",
+          "title": "Roleplay Prompt",
+          "description": "Extra prompt for the roleplay command",
+          "type": "textfield",
+          "default": "",
+          "required": false
+        },
+        {
+          "name": "model_roleplay_on",
+          "description": "Override the global preferred model for this command",
+          "type": "dropdown",
+          "required": false,
+          "title": "Model Override",
+          "placeholder": "Follow global model",
+          "data": [
+            {
+              "title": "Follow global model",
+              "value": "global"
+            },
+            {
+              "title": "DeepSeek-V3",
+              "value": "deepseek-chat"
+            },
+            {
+              "title": "DeepSeek-R1",
+              "value": "deepseek-reasoner"
+            },
+            {
+              "title": "GPT-4o",
+              "value": "gpt-4o"
+            },
+            {
+              "title": "GPT-4o mini",
+              "value": "gpt-4o-mini"
+            },
+            {
+              "title": "GPT-4",
+              "value": "gpt-4"
+            },
+            {
+              "title": "GPT-4 Turbo",
+              "value": "gpt-4-turbo"
+            },
+            {
+              "title": "GPT-3.5 Turbo",
+              "value": "gpt-3.5-turbo"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "execute",
       "title": "Execute Selected Prompt",
       "description": "Execute the selected prompt and replace it with its output",
