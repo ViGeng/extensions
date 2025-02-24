@@ -1,0 +1,150 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "event",
+  "title": "Event",
+  "description": "Create Calendar/Reminder/TODO events effortlessly by AI.",
+  "icon": "extension_icon.png",
+  "author": "ViGeng",
+  "categories": [
+    "Productivity",
+    "Developer Tools",
+    "Applications",
+    "Communication"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "askAI",
+      "title": "Ask AI",
+      "subtitle": "Google Gemini",
+      "description": "Ask Google's Gemini Pro",
+      "mode": "view",
+      "icon": "gemini-icon.png",
+      "arguments": [
+        {
+          "name": "query",
+          "placeholder": "Query",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "askAboutScreen",
+      "title": "Ask About Screen Content",
+      "subtitle": "Google Gemini",
+      "description": "Ask Google's Gemini Pro about what's on your screen",
+      "mode": "no-view",
+      "icon": "screen-icon.png",
+      "arguments": [
+        {
+          "name": "query",
+          "placeholder": "Query",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "askAboutSelectedText",
+      "title": "Ask About Selected Text",
+      "subtitle": "Google Gemini",
+      "description": "Ask Google's Gemini Pro about your selected text",
+      "mode": "view",
+      "icon": "clipboard-icon.png",
+      "arguments": [
+        {
+          "name": "query",
+          "placeholder": "Query",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "selectedTextToCalendar",
+      "title": "Selected Text to Calendar",
+      "description": "Create Apple Calendar Event from Selected Text",
+      "icon": "summarize-icon.png",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "description": "API Token/Key for LLMs",
+      "name": "api_key",
+      "required": true,
+      "title": "LLMs API Token",
+      "type": "password"
+    },
+    {
+      "name": "base_url",
+      "title": "Base URL",
+      "description": "Base URL for the API",
+      "type": "textfield",
+      "required": false
+    },
+    {
+      "description": "Which model variant to use by default.",
+      "name": "global_model",
+      "title": "Global Model",
+      "type": "dropdown",
+      "required": false,
+      "default": "gpt-4o",
+      "data": [
+        {
+          "title": "Gemini 2.0 Flash",
+          "value": "gemini-2.0-flash"
+        },
+        {
+          "title": "Gemini 2.0 Flash Thinking Experimental",
+          "value": "gemini-2.0-flash-thinking-exp"
+        },
+        {
+          "title": "Gemini 2.0 Pro Experimental",
+          "value": "gemini-2.0-pro-exp"
+        },
+        {
+          "title": "OpenAI GPT-4o",
+          "value": "gpt-4o"
+        },
+        {
+          "title": "OpenAI GPT-4o Mini",
+          "value": "gpt-4o-mini"
+        }
+      ]
+    },
+    {
+      "name": "custom_global_model",
+      "title": "Custom Global Model",
+      "description": "Custom model in case you use a special model that is not listed in the dropdown. It will override the default model. Keep this empty if you don't have a custom model.",
+      "type": "textfield",
+      "required": false
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.85.2",
+    "@raycast/utils": "^1.9.0",
+    "gemini-ai": "^2.0.1",
+    "jimp": "^0.22.10",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.85.4"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "1.0.5",
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.2.27",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "react": "^18.2.0",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "pull": "ray pull-contributions",
+    "publish": "ray publish"
+  }
+}
